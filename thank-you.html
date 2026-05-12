@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thank You! — LAD Digital | Your Order is Confirmed</title>
+<meta name="description" content="Thank you for your purchase! Your 130+ premium Shopify themes are ready to download.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+/* ─── TOKENS (same as landing page) ───────── */
+:root{
+  --bg:       #F9F8F6;
+  --bg2:      #F3F2EE;
+  --bg3:      #ECEAE3;
+  --surface:  #FFFFFF;
+  --surfaceB: #FAFAF8;
+
+  --ink:      #1A1814;
+  --ink2:     #3C3830;
+  --ink3:     #6B6558;
+  --ink4:     #9E9890;
+
+  --gold:     #C9952A;
+  --gold2:    #E8B84B;
+  --gold-bg:  rgba(201,149,42,.08);
+  --gold-bd:  rgba(201,149,42,.22);
+  --gold-sh:  rgba(201,149,42,.18);
+
+  --green:    #1A5C3A;
+  --green2:   #22744A;
+  --green-bg: rgba(26,92,58,.07);
+  --green-bd: rgba(26,92,58,.2);
+
+  --red:      #B23A2A;
+  --red-bg:   rgba(178,58,42,.07);
+  --red-bd:   rgba(178,58,42,.2);
+
+  --bd:       rgba(26,24,20,.08);
+  --bd2:      rgba(26,24,20,.12);
+
+  --r:        10px;
+  --r2:       16px;
+  --r3:       22px;
+  --r4:       32px;
+
+  --sh1: 0 1px 2px rgba(26,24,20,.04), 0 3px 10px rgba(26,24,20,.05);
+  --sh2: 0 2px 6px rgba(26,24,20,.05), 0 10px 28px rgba(26,24,20,.08);
+  --sh3: 0 4px 12px rgba(26,24,20,.06), 0 20px 50px rgba(26,24,20,.10);
+  --sh-gold: 0 4px 24px rgba(201,149,42,.22);
+  --sh-btn:  0 2px 0 rgba(26,24,20,.5), 0 6px 20px rgba(26,24,20,.28);
+}
+
+/* ─── RESET ──────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  overflow-x:hidden;
+  min-height:100vh
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* ─── TYPOGRAPHY ─────────────────────────── */
+.serif{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+h1,h2,h3{font-family:'DM Sans',sans-serif;font-weight:700;line-height:1.15;letter-spacing:-.03em;color:var(--ink)}
+h4{font-family:'DM Sans',sans-serif;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+
+/* ─── LAYOUT ─────────────────────────────── */
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+.wrap-sm{max-width:680px;margin:0 auto;padding:0 24px}
+
+/* ─── LABEL PILL ─────────────────────────── */
+.label{
+  display:inline-flex;align-items:center;gap:6px;
+  border-radius:50px;font-size:.66rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 14px;margin-bottom:20px
+}
+.label.gold{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-bd)}
+.label.green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
+.label.neutral{background:var(--bg2);color:var(--ink3);border:1px solid var(--bd)}
+
+/* ─── BUTTONS ────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--ink);color:#fff;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.96rem;
+  letter-spacing:-.01em;border:none;border-radius:var(--r2);
+  padding:16px 40px;cursor:pointer;
+  box-shadow:0 2px 0 rgba(0,0,0,.6),0 6px 20px rgba(26,24,20,.22);
+  transition:all .18s;position:relative;overflow:hidden
+}
+.btn::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,transparent 50%);pointer-events:none}
+.btn:hover{background:#0a0908;transform:translateY(-2px);box-shadow:0 4px 0 rgba(0,0,0,.6),0 14px 36px rgba(26,24,20,.3)}
+.btn:active{transform:translateY(1px)}
+.btn.lg{font-size:1.02rem;padding:18px 48px;border-radius:var(--r3)}
+
+.btn-gold{
+  background:var(--gold);color:#fff;
+  box-shadow:0 2px 0 rgba(130,78,10,.7),0 6px 20px rgba(201,149,42,.28)
+}
+.btn-gold:hover{background:#b8881f;box-shadow:0 4px 0 rgba(100,60,8,.7),0 12px 32px rgba(201,149,42,.36)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--bd2);box-shadow:var(--sh1)}
+.btn-outline:hover{background:var(--bg2);transform:translateY(-1px);box-shadow:var(--sh2)}
+
+/* ─── SCROLL REVEAL ──────────────────────── */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.rev.in{opacity:1;transform:none}
+.rev.d1{transition-delay:.08s}
+.rev.d2{transition-delay:.16s}
+.rev.d3{transition-delay:.24s}
+.rev.d4{transition-delay:.32s}
+.rev.d5{transition-delay:.40s}
+
+/* ─── ANNOUNCEMENT BAR ───────────────────── */
+.ann{
+  background:var(--green);padding:10px 0;
+  overflow:hidden;white-space:nowrap;
+  font-size:.72rem;font-weight:500;color:rgba(255,255,255,.7);
+  letter-spacing:.06em
+}
+.ann-track{display:inline-flex;animation:marquee 32s linear infinite}
+.ann-track em{padding:0 28px;font-style:normal;color:rgba(255,255,255,.7)}
+.ann-track span{color:#6be8a7;font-weight:700}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ─── NAV ────────────────────────────────── */
+.nav{
+  background:rgba(249,248,246,.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--bd);padding:12px 0
+}
+.nav-in{
+  max-width:960px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.92rem;letter-spacing:-.03em;color:var(--ink)}
+.logo-mark{
+  width:36px;height:36px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0
+}
+.logo-mark img{width:100%;height:100%;object-fit:contain}
+.nav-badge{
+  background:var(--green-bg);color:var(--green2);
+  border:1px solid var(--green-bd);border-radius:50px;
+  font-size:.72rem;font-weight:600;padding:5px 14px;white-space:nowrap
+}
+
+/* ─── HERO SECTION ───────────────────────── */
+.hero{
+  padding:72px 0 80px;position:relative;overflow:hidden;
+  background:var(--bg)
+}
+.hero::before{
+  content:'';position:absolute;top:-80px;right:-100px;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(26,92,58,.06) 0%,transparent 65%);
+  pointer-events:none
+}
+.hero::after{
+  content:'';position:absolute;bottom:-80px;left:-80px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(201,149,42,.05) 0%,transparent 65%);
+  pointer-events:none
+}
+.hero-inner{
+  max-width:720px;margin:0 auto;padding:0 24px;
+  text-align:center;position:relative;z-index:1
+}
+
+/* ─── SUCCESS ICON ───────────────────────── */
+.success-ring{
+  width:96px;height:96px;margin:0 auto 28px;
+  border-radius:50%;
+  background:var(--green-bg);
+  border:2px solid var(--green-bd);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 10px rgba(26,92,58,.05),0 8px 32px rgba(26,92,58,.12);
+  position:relative
+}
+.success-ring::before{
+  content:'';position:absolute;inset:-8px;
+  border-radius:50%;
+  border:1.5px solid rgba(26,92,58,.12);
+  animation:ring-pulse 2.5s ease-in-out infinite
+}
+@keyframes ring-pulse{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.08);opacity:.4}
+}
+.success-icon{font-size:2.8rem;line-height:1}
+
+.hero h1{
+  font-size:clamp(1.9rem,4vw,2.8rem);
+  font-weight:700;line-height:1.1;letter-spacing:-.04em;margin-bottom:16px
+}
+.hero h1 .serif{font-size:1.04em;color:var(--gold)}
+.hero-sub{
+  font-size:1.02rem;color:var(--ink3);
+  line-height:1.72;max-width:540px;margin:0 auto 32px
+}
+.hero-sub strong{color:var(--ink);font-weight:600}
+
+/* ─── ORDER CONFIRMATION CARD ────────────── */
+.confirm-card{
+  background:var(--surface);border:1px solid var(--green-bd);
+  border-radius:var(--r3);padding:32px 36px;margin:0 auto 40px;
+  box-shadow:var(--sh2),0 0 0 3px rgba(26,92,58,.05);
+  text-align:left;max-width:560px
+}
+@media(max-width:600px){.confirm-card{padding:24px 20px}}
+.confirm-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--bd)
+}
+.confirm-header-icon{
+  width:42px;height:42px;border-radius:10px;
+  background:var(--green-bg);border:1px solid var(--green-bd);
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0
+}
+.confirm-header-text{flex:1}
+.confirm-header-text strong{display:block;font-size:.9rem;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.confirm-header-text span{font-size:.76rem;color:var(--green2);font-weight:500}
+.confirm-rows{display:flex;flex-direction:column;gap:12px}
+.confirm-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.confirm-row-label{display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--ink3)}
+.confirm-row-label i{font-style:normal;font-size:1rem}
+.confirm-row-val{font-size:.84rem;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.confirm-row-val.gold{color:var(--gold)}
+.confirm-row-val.green{color:var(--green2)}
+.confirm-divider{height:1px;background:var(--bd);margin:4px 0}
+.confirm-total{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--gold-bg);border:1px solid var(--gold-bd);
+  border-radius:var(--r);padding:14px 16px;margin-top:6px
+}
+.confirm-total-label{font-size:.9rem;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.confirm-total-price{font-size:1.1rem;font-weight:700;color:var(--gold);letter-spacing:-.03em}
+
+/* ─── NEXT STEPS ─────────────────────────── */
+.steps-section{
+  background:var(--surface);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);
+  padding:72px 0
+}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+@media(max-width:700px){.steps-grid{grid-template-columns:1fr}}
+.step-card{
+  background:var(--bg);border:1px solid var(--bd);
+  border-radius:var(--r2);padding:28px 22px;
+  position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s
+}
+.step-card:hover{box-shadow:var(--sh2);transform:translateY(-3px)}
+.step-num{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--ink);color:#fff;
+  font-size:.8rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;box-shadow:var(--sh1)
+}
+.step-card.s1 .step-num{background:var(--gold)}
+.step-card.s2 .step-num{background:var(--green2)}
+.step-card.s3 .step-num{background:var(--ink)}
+.step-card h4{font-size:.92rem;font-weight:600;margin-bottom:8px;letter-spacing:-.02em}
+.step-card p{font-size:.83rem;color:var(--ink3);line-height:1.65}
+
+/* ─── WHAT YOU GET ───────────────────────── */
+.bundle-section{padding:80px 0;background:var(--bg)}
+.bundle-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+@media(max-width:640px){.bundle-grid{grid-template-columns:1fr}}
+.bundle-card{
+  background:var(--surface);border:1px solid var(--bd);
+  border-radius:var(--r2);padding:24px 20px;
+  box-shadow:var(--sh1);transition:box-shadow .2s,transform .2s,border-color .2s
+}
+.bundle-card:hover{box-shadow:var(--sh2);transform:translateY(-3px);border-color:var(--bd2)}
+.bundle-card.accent-gold{border-top:2px solid var(--gold)}
+.bundle-card.accent-green{border-top:2px solid var(--green2)}
+.bundle-card.accent-ink{border-top:2px solid var(--ink)}
+.bundle-icon{font-size:1.6rem;margin-bottom:12px}
+.bundle-card h4{font-size:.9rem;font-weight:600;margin-bottom:6px;letter-spacing:-.02em}
+.bundle-card p{font-size:.83rem;color:var(--ink3);line-height:1.65}
+
+/* ─── SUPPORT STRIP ──────────────────────── */
+.support-section{
+  background:var(--ink);padding:64px 0;
+  position:relative;overflow:hidden
+}
+.support-section::before{
+  content:'';position:absolute;top:-80px;right:-60px;width:380px;height:380px;
+  background:radial-gradient(circle,rgba(201,149,42,.1) 0%,transparent 65%);pointer-events:none
+}
+.support-inner{
+  max-width:720px;margin:0 auto;padding:0 24px;
+  text-align:center;position:relative;z-index:1
+}
+.support-section h2{color:#fff;font-size:clamp(1.4rem,3vw,2rem);margin-bottom:14px}
+.support-section p{color:rgba(255,255,255,.55);font-size:.92rem;line-height:1.72;margin-bottom:28px}
+.support-ways{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.support-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-radius:50px;padding:9px 18px;
+  font-size:.78rem;font-weight:500;color:rgba(255,255,255,.7);
+  transition:background .18s,border-color .18s
+}
+.support-pill:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22)}
+.support-pill i{font-style:normal}
+
+/* ─── SHARE SECTION ──────────────────────── */
+.share-section{padding:72px 0;background:var(--bg2)}
+.share-inner{max-width:520px;margin:0 auto;padding:0 24px;text-align:center}
+.share-inner h2{font-size:clamp(1.4rem,2.8vw,1.9rem);margin-bottom:12px}
+.share-inner p{font-size:.9rem;color:var(--ink3);line-height:1.72;margin-bottom:28px}
+.share-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.share-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--surface);border:1px solid var(--bd);
+  border-radius:50px;padding:10px 22px;
+  font-size:.78rem;font-weight:600;color:var(--ink);
+  box-shadow:var(--sh1);transition:all .18s;cursor:pointer
+}
+.share-btn:hover{box-shadow:var(--sh2);transform:translateY(-2px);border-color:var(--bd2)}
+.share-btn.wa{border-color:rgba(37,211,102,.3);color:#1a9e50}
+.share-btn.wa:hover{background:rgba(37,211,102,.06)}
+.share-btn.tw{border-color:rgba(29,161,242,.25);color:#1a6bab}
+.share-btn.tw:hover{background:rgba(29,161,242,.05)}
+
+/* ─── FOOTER ─────────────────────────────── */
+footer{
+  background:var(--ink);
+  padding:44px 24px 36px;
+  text-align:center;
+  font-size:.76rem;color:rgba(255,255,255,.35);line-height:1.8
+}
+footer a{color:rgba(255,255,255,.45);transition:color .15s}
+footer a:hover{color:rgba(255,255,255,.7)}
+.footer-logo{
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:.92rem;letter-spacing:-.03em;
+  color:#fff;margin-bottom:20px;display:flex;align-items:center;gap:8px;justify-content:center
+}
+.sec-div{height:1px;background:linear-gradient(90deg,transparent,var(--bd2),transparent)}
+
+/* ─── CONFETTI CANVAS ────────────────────── */
+#confetti-canvas{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:9999
+}
+</style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann">
+  <div class="ann-track">
+    <em>🎉 <span>Purchase Confirmed!</span> — Your 130+ Premium Shopify Themes are ready</em>
+    <em>✅ <span>Instant Download</span> — Access your themes right now</em>
+    <em>🛡 <span>Lifetime Access</span> — All future themes included, free</em>
+    <em>📩 Check your email — download link sent to your inbox</em>
+    <em>🎉 <span>Purchase Confirmed!</span> — Your 130+ Premium Shopify Themes are ready</em>
+    <em>✅ <span>Instant Download</span> — Access your themes right now</em>
+    <em>🛡 <span>Lifetime Access</span> — All future themes included, free</em>
+    <em>📩 Check your email — download link sent to your inbox</em>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">
+        <img src="Page_Logo.png" alt="LAD Digital Logo">
+      </div>
+      LAD<span style="color:var(--gold2)">Digital</span>
+    </a>
+    <div class="nav-badge">✓ Order Confirmed</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="success-ring rev">
+      <div class="success-icon">✓</div>
+    </div>
+
+    <div class="label green rev d1">🎉 Purchase Successful</div>
+    <h1 class="rev d2">You're in. Welcome to<br><span class="serif">the bundle.</span></h1>
+    <p class="hero-sub rev d3">
+      Your payment of <strong>₹149</strong> is confirmed. You now have <strong>lifetime access</strong> to 130+ premium, conversion-ready Shopify themes — no monthly fees, ever.
+    </p>
+
+    <!-- ORDER CONFIRMATION CARD -->
+    <div class="confirm-card rev d4">
+      <div class="confirm-header">
+        <div class="confirm-header-icon">🛒</div>
+        <div class="confirm-header-text">
+          <strong>Order Confirmed</strong>
+          <span>✓ Payment received &amp; verified</span>
+        </div>
+      </div>
+      <div class="confirm-rows">
+        <div class="confirm-row">
+          <div class="confirm-row-label"><i>📦</i> Product</div>
+          <div class="confirm-row-val">130+ Premium Shopify Themes</div>
+        </div>
+        <div class="confirm-row">
+          <div class="confirm-row-label"><i>🔓</i> License</div>
+          <div class="confirm-row-val green">Lifetime · Unlimited Stores</div>
+        </div>
+        <div class="confirm-row">
+          <div class="confirm-row-label"><i>⚡</i> Delivery</div>
+          <div class="confirm-row-val">Instant Download</div>
+        </div>
+        <div class="confirm-row">
+          <div class="confirm-row-label"><i>📩</i> Email</div>
+          <div class="confirm-row-val">Link sent to your inbox</div>
+        </div>
+        <div class="confirm-divider"></div>
+        <div class="confirm-total">
+          <div class="confirm-total-label">Total Paid</div>
+          <div class="confirm-total-price">₹149 — One Time</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://drive.google.com/drive/folders/1oS0eWk-SbcyRCVLPgLCGzPmZkYMMmeBW" target="_blank" rel="noopener" class="rev d5">
+      <button class="btn btn-gold lg" style="margin:0 auto">⬇ Download Your Themes Now →</button>
+    </a>
+    <p style="margin-top:12px;font-size:.75rem;color:var(--ink4)" class="rev d5">
+      Having trouble? Check your spam folder or contact us below.
+    </p>
+  </div>
+</section>
+<div class="sec-div"></div>
+
+
+<script>
+/* ─── Scroll reveal ─────────────────── */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+
+/* ─── Confetti ──────────────────────── */
+(function(){
+  const canvas=document.getElementById('confetti-canvas');
+  const ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+
+  const colors=['#C9952A','#E8B84B','#22744A','#1A5C3A','#F9F8F6','#3C3830'];
+  const pieces=[];
+  const count=90;
+
+  for(let i=0;i<count;i++){
+    pieces.push({
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height-canvas.height,
+      w:Math.random()*9+4,
+      h:Math.random()*4+3,
+      color:colors[Math.floor(Math.random()*colors.length)],
+      rot:Math.random()*360,
+      rotSpeed:(Math.random()-.5)*3,
+      speed:Math.random()*2.5+1.2,
+      drift:(Math.random()-.5)*1.2,
+      opacity:Math.random()*.6+.4
+    });
+  }
+
+  let animId,frame=0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+      ctx.save();
+      ctx.globalAlpha=p.opacity;
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.rot*Math.PI/180);
+      ctx.fillStyle=p.color;
+      ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      ctx.restore();
+      p.y+=p.speed;
+      p.x+=p.drift;
+      p.rot+=p.rotSpeed;
+      if(p.y>canvas.height+20){
+        p.y=-20;
+        p.x=Math.random()*canvas.width;
+      }
+    });
+    frame++;
+    if(frame<220) animId=requestAnimationFrame(draw);
+    else{ctx.clearRect(0,0,canvas.width,canvas.height);}
+  }
+  draw();
+
+  window.addEventListener('resize',()=>{
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+  });
+})();
+</script>
+</body>
+</html>
