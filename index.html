@@ -5,11 +5,32 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LAD Digital — 130+ Premium Shopify Themes at ₹149 Lifetime Access</title>
 <meta name="description" content="Unlock 130+ premium, conversion-ready Shopify themes worth ₹2,60,000+ for just ₹149. One-time payment. Instant download. No coding needed.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<!-- DNS prefetch for speed -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- Load only the weights actually used; display=swap prevents FOIT/render block -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=DM+Serif+Display:ital@1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=DM+Serif+Display:ital@1&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=DM+Serif+Display:ital@1&display=swap"></noscript>
 
 <style>
+/* ─── PERFORMANCE ─────────────────────────────── */
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+section,.metrics-bar,.showcase-section,footer{contain:content}
+.showcase-track{will-change:transform}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(max-width:767px){
+  .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(249,248,246,.99)}
+  html{scroll-behavior:auto}
+  .step-card,.trust-card,.faq-item,.showcase-card{transition:none!important}
+  .step-card:hover,.trust-card:hover{transform:none;box-shadow:var(--sh1)}
+}
+.nav{height:60px}
+
 /* ─── TOKENS ─────────────────────────────────── */
 :root{
   --bg:       #F9F8F6;
@@ -169,32 +190,41 @@ section{padding:88px 0}
   overflow:hidden;flex-shrink:0
 }
 .logo-mark img{width:100%;height:100%;object-fit:contain}
-.nav-r{display:flex;align-items:center;gap:10px}
+.nav-r{display:flex;align-items:center;gap:8px}
 .timer-pill{
   background:var(--red-bg);color:var(--red);
   border:1px solid var(--red-bd);border-radius:50px;
   font-size:.72rem;font-weight:600;padding:5px 14px;white-space:nowrap;
-  font-variant-numeric:tabular-nums
+  font-variant-numeric:tabular-nums;flex-shrink:0
 }
-@media(max-width:480px){
-  .timer-pill{
-    font-size:.65rem;
-    padding:4px 10px;
-    letter-spacing:-.01em
-  }
-  .nav-cta{
-    font-size:.72rem;
-    padding:8px 14px
-  }
-}
+
+/* Shopify-style outlined CTA — border only, sharp corners */
 .nav-cta{
-  background:var(--ink);color:#fff;
-  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.78rem;
-  border:none;border-radius:50px;padding:9px 22px;cursor:pointer;
-  transition:all .16s;letter-spacing:-.01em;
-  box-shadow:0 2px 8px rgba(26,24,20,.18)
+  background:transparent;
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+  font-size:clamp(.65rem, 2.2vw, .8rem);
+  border:1.5px solid var(--ink);
+  border-radius:6px;
+  padding:7px 16px;
+  cursor:pointer;
+  transition:background .15s,color .15s;
+  letter-spacing:-.01em;
+  white-space:nowrap;
+  line-height:1.3;
+  flex-shrink:0
 }
-.nav-cta:hover{background:#2a2720;transform:scale(1.02)}
+.nav-cta:hover{
+  background:var(--ink);
+  color:#fff
+}
+
+@media(max-width:480px){
+  .timer-pill{font-size:.62rem;padding:4px 9px;letter-spacing:-.01em}
+  .nav-cta{font-size:clamp(.6rem,3.2vw,.75rem);padding:6px 11px;border-radius:5px}
+  .nav-r{gap:6px}
+}
 
 /* ─── HERO ───────────────────────────────────── */
 .hero{
@@ -348,6 +378,8 @@ section{padding:88px 0}
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.13),transparent);
   animation:shimmer 2.6s ease-in-out infinite;z-index:2;pointer-events:none
 }
+/* Disable shimmer on mobile — constant GPU repaint */
+@media(max-width:767px){.card-image-holder .shimmer{display:none}}
 
 /* Badge — repositioned to overlay top-right of image */
 .card-badge{
@@ -540,6 +572,13 @@ section{padding:88px 0}
   font-size:.86rem;color:var(--ink3);font-weight:500
 }
 .bundle-more strong{color:var(--ink);font-weight:700}
+
+/* ─── CONTENT VISIBILITY — skip off-screen rendering ── */
+.stack-section,.compare-section,.guarantee-section,.faq-section{
+  content-visibility:auto;
+  contain-intrinsic-size:0 600px
+}
+.trust-section{content-visibility:auto;contain-intrinsic-size:0 400px}
 
 /* ─── VALUE STACK TABLE ───────────────────────── */
 .stack-section{background:var(--bg)}
@@ -761,7 +800,7 @@ footer a:hover{color:rgba(255,255,255,.65)}
   <div class="nav-in">
     <div class="logo">
       <div class="logo-mark">
-        <img src="Page_Logo.png" alt="LAD Digital Logo">
+        <img src="Page_Logo.png" alt="LAD Digital Logo" decoding="async" width="36" height="36">
       </div>
       LAD<span style="color:var(--gold)">Digital</span>
     </div>
@@ -832,6 +871,8 @@ footer a:hover{color:rgba(255,255,255,.65)}
                 alt="Premium Shopify Themes Preview"
                 class="hero-card-img"
                 loading="eager"
+                fetchpriority="high"
+                decoding="async"
                 onerror="this.style.display='none'"
               >
               <div class="shimmer"></div>
@@ -1488,7 +1529,7 @@ footer a:hover{color:rgba(255,255,255,.65)}
 .showcase-section{background:var(--bg3);padding:88px 0 80px;overflow:hidden}
 @media(max-width:600px){.showcase-section{padding:64px 0 60px}}
 
-.showcase-track-wrap{position:relative;overflow:hidden}
+.showcase-track-wrap{position:relative;overflow:hidden;content-visibility:auto;contain-intrinsic-size:0 340px}
 .showcase-fade-l,.showcase-fade-r{
   position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none
 }
@@ -1498,9 +1539,16 @@ footer a:hover{color:rgba(255,255,255,.65)}
 .showcase-track{
   display:flex;gap:18px;padding:16px 60px 20px;
   animation:scroll-themes 30s linear infinite;
-  width:max-content
+  width:max-content;
+  /* Promote to own layer — avoids repainting page during scroll */
+  transform:translateZ(0);
+  backface-visibility:hidden
 }
 .showcase-track:hover{animation-play-state:paused}
+/* Slower on mobile = less GPU work */
+@media(max-width:767px){
+  .showcase-track{animation-duration:45s}
+}
 @keyframes scroll-themes{
   0%{transform:translateX(0)}
   100%{transform:translateX(-50%)}
@@ -1639,6 +1687,14 @@ footer a:hover{color:rgba(255,255,255,.65)}
 .sc-skeleton .sc-logo-bar,
 .sc-skeleton .sc-pill{
   animation:sk-pulse 1.8s ease-in-out infinite
+}
+@media(max-width:767px){
+  .sc-skeleton .sc-headline,
+  .sc-skeleton .sc-sub-line,
+  .sc-skeleton .sc-btn-mock,
+  .sc-skeleton .sc-prod,
+  .sc-skeleton .sc-logo-bar,
+  .sc-skeleton .sc-pill{animation:none}
 }
 </style>
 
@@ -1972,10 +2028,10 @@ footer a:hover{color:rgba(255,255,255,.65)}
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo" style="display:flex;align-items:center;gap:8px;justify-content:center">
-    <img src="Page_Logo.png" alt="LAD Digital" style="width:28px;height:28px;object-fit:contain;opacity:.8">
+    <img src="Page_Logo.png" alt="LAD Digital" loading="lazy" decoding="async" style="width:28px;height:28px;object-fit:contain;opacity:.8">
     LAD<span style="color:var(--gold2)">Digital</span>
   </div>
-  <p>© 2026 LAD Digital. All rights reserved.</p>
+  <p>© 2025 LAD Digital. All rights reserved.</p>
   <p style="margin-top:8px">
     <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
     <a href="refund-policy.html">Refund Policy</a> &nbsp;·&nbsp;
@@ -1991,21 +2047,18 @@ footer a:hover{color:rgba(255,255,255,.65)}
 </footer>
 
 <script>
+/* ── Run non-critical JS after page is fully idle ── */
+function runWhenIdle(fn){
+  if('requestIdleCallback' in window){requestIdleCallback(fn,{timeout:2000})}
+  else{setTimeout(fn,200)}
+}
+
 /* ── Scroll to CTA ────────────────────────── */
 function scrollToCta(){
   document.getElementById('cta').scrollIntoView({behavior:'smooth',block:'center'});
 }
 
-/* ── FAQ accordion ───────────────────────── */
-document.querySelectorAll('.faq-q').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const item=q.parentElement,isOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-    if(!isOpen) item.classList.add('open');
-  });
-});
-
-/* ── Countdown timer ─────────────────────── */
+/* ── Countdown timer (critical — run immediately) ── */
 (function(){
   const KEY='dgp_theme_v1';
   let exp=localStorage.getItem(KEY);
@@ -2030,22 +2083,59 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   tick();
 })();
 
-/* ── Scroll reveal ───────────────────────── */
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.rev').forEach(el=>io.observe(el));
-
-/* ── Sticky bar visibility ───────────────── */
+/* ── Hero card image fade-in ── */
 (function(){
+  var img=document.querySelector('.hero-card-img');
+  if(!img)return;
+  function reveal(){img.classList.add('loaded');}
+  if(img.complete&&img.naturalWidth>0){reveal();}
+  else{img.addEventListener('load',reveal);}
+})();
+
+/* ── Defer non-critical work ── */
+runWhenIdle(function(){
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement,isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!isOpen)item.classList.add('open');
+    },{passive:true});
+  });
+
+  /* Scroll reveal — use passive observer */
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        /* Use requestAnimationFrame to batch DOM writes off main thread */
+        requestAnimationFrame(()=>{
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        });
+      }
+    });
+  },{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+  document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+
+  /* Showcase image loader */
+  document.querySelectorAll('.sc-img').forEach(function(img){
+    if(!img.src||img.src===window.location.href)return;
+    if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}
+    else{img.addEventListener('load',function(){img.classList.add('loaded');},{passive:true,once:true});}
+  });
+
+  /* Sticky bar visibility */
   const bar=document.getElementById('stk');
   const hero=document.getElementById('hero');
-  if(!bar||!hero)return;
-  new IntersectionObserver(entries=>{
-    bar.style.transform=entries[0].isIntersecting?'translateY(100%)':'translateY(0)';
-    bar.style.transition='transform .3s ease';
-  },{threshold:.1}).observe(hero);
-})();
+  if(bar&&hero){
+    new IntersectionObserver(entries=>{
+      bar.style.transform=entries[0].isIntersecting?'translateY(100%)':'translateY(0)';
+      bar.style.transition='transform .3s ease';
+    },{threshold:.1}).observe(hero);
+  }
+
+});
 </script>
 </body>
 </html>
