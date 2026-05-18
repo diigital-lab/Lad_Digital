@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shipping &amp; Delivery — LAD Digital</title>
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F8F6;--bg2:#F3F2EE;--surface:#FFFFFF;
+  --ink:#1A1814;--ink2:#3C3830;--ink3:#6B6558;--ink4:#9E9890;
+  --gold:#C9952A;--gold2:#E8B84B;
+  --gold-bg:rgba(201,149,42,.08);--gold-bd:rgba(201,149,42,.22);
+  --green:#1A5C3A;--green2:#22744A;
+  --green-bg:rgba(26,92,58,.07);--green-bd:rgba(26,92,58,.2);
+  --bd:rgba(26,24,20,.08);--bd2:rgba(26,24,20,.12);
+  --r2:16px;--r3:22px;
+  --sh1:0 1px 2px rgba(26,24,20,.04),0 3px 10px rgba(26,24,20,.05);
+  --sh2:0 2px 6px rgba(26,24,20,.05),0 10px 28px rgba(26,24,20,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:400;background:rgba(249,248,246,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);padding:12px 0}
+.nav-in{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.92rem;letter-spacing:-.03em;color:var(--ink)}
+.logo-mark{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+.logo-mark img{width:100%;height:100%;object-fit:contain}
+.back-btn{background:var(--ink);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.78rem;border:none;border-radius:50px;padding:9px 22px;cursor:pointer;transition:all .16s;letter-spacing:-.01em}
+.back-btn:hover{background:#2a2720}
+
+/* ── PAGE HERO ── */
+.page-hero{background:var(--ink);padding:56px 0 48px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(201,149,42,.1) 0%,transparent 65%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(26,92,58,.1) 0%,transparent 65%);pointer-events:none}
+.page-hero h1{color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.04em;margin-bottom:8px;position:relative;z-index:1}
+.page-hero p{color:rgba(255,255,255,.45);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;position:relative;z-index:1}
+
+/* ── CONTENT ── */
+.policy-wrap{max-width:740px;margin:0 auto;padding:56px 24px 80px}
+.policy-card{background:var(--surface);border:1px solid var(--bd2);border-radius:var(--r2);padding:40px 44px;box-shadow:var(--sh2)}
+@media(max-width:600px){.policy-card{padding:28px 22px}}
+
+.policy-card h2{font-size:1.05rem;font-weight:700;color:var(--ink);margin:32px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
+.policy-card h2:first-child{margin-top:0}
+.policy-card p{font-size:.9rem;color:var(--ink3);margin-bottom:12px;line-height:1.75}
+.policy-card ul{margin:8px 0 14px 0;padding-left:0;list-style:none}
+.policy-card ul li{font-size:.9rem;color:var(--ink3);padding:6px 0 6px 22px;position:relative;line-height:1.65}
+.policy-card ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-weight:600}
+.policy-card a{color:var(--gold);text-decoration:underline}
+.policy-card .last-updated{display:inline-block;background:var(--bg2);border:1px solid var(--bd);border-radius:50px;font-size:.72rem;color:var(--ink4);padding:4px 14px;margin-bottom:28px;letter-spacing:.04em}
+
+/* ── HIGHLIGHT BOXES ── */
+.highlight-box{background:var(--gold-bg);border:1px solid var(--gold-bd);border-radius:14px;padding:22px 26px;margin:20px 0}
+.highlight-box p{color:var(--ink2);font-size:.88rem;margin:0;font-weight:500;line-height:1.7}
+
+.green-box{background:var(--green-bg);border:1px solid var(--green-bd);border-radius:14px;padding:20px 24px;margin:20px 0}
+.green-box p{color:var(--green2);font-size:.88rem;margin:0;font-weight:500;line-height:1.7}
+
+/* ── DELIVERY STEPS ── */
+.delivery-steps{display:flex;flex-direction:column;gap:0;margin:20px 0}
+.d-step{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--bd)}
+.d-step:last-child{border-bottom:none}
+.d-step-num{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--ink);color:#fff;
+  font-size:.76rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;box-shadow:var(--sh1)
+}
+.d-step-num.gold{background:var(--gold)}
+.d-step-num.green{background:var(--green2)}
+.d-step-body strong{display:block;font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:4px;letter-spacing:-.01em}
+.d-step-body p{font-size:.84rem;color:var(--ink3);margin:0;line-height:1.65}
+
+/* ── INSTANT BADGE ── */
+.instant-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--green-bg);border:1px solid var(--green-bd);
+  border-radius:50px;padding:6px 18px;margin-bottom:20px;
+  font-size:.72rem;font-weight:600;color:var(--green2);letter-spacing:.06em;text-transform:uppercase
+}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green2);animation:blink 1.8s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* ── FOOTER ── */
+footer{background:#000;color:rgba(255,255,255,.4);text-align:center;padding:36px 24px;font-size:.72rem;line-height:1.8}
+.footer-logo{font-family:'DM Sans',sans-serif;font-weight:700;font-size:.9rem;color:rgba(255,255,255,.7);letter-spacing:-.03em;margin-bottom:12px;display:flex;align-items:center;gap:8px;justify-content:center}
+footer a{color:rgba(255,255,255,.4);text-decoration:underline}
+footer a:hover{color:rgba(255,255,255,.65)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><img src="Page_Logo.png" alt="LAD Digital Logo"></div>
+      LAD<span style="color:var(--gold)">Digital</span>
+    </a>
+    <a href="index.html"><button class="back-btn">← Back to Store</button></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <h1>Shipping &amp; Delivery</h1>
+  <p>Last Updated: 01 January 2026</p>
+</div>
+
+<!-- CONTENT -->
+<div class="policy-wrap">
+  <div class="policy-card">
+    <span class="last-updated">Effective: 01 Jan 2026</span>
+
+    <div class="instant-badge">
+      <div class="badge-dot"></div>
+      Instant Digital Delivery
+    </div>
+
+    <div class="highlight-box">
+      <p>⚡ <strong>LAD Digital sells exclusively digital products.</strong> There is no physical shipping involved. All products are delivered electronically — instantly, directly to you, upon successful payment confirmation.</p>
+    </div>
+
+    <h2>1. Nature of Our Products</h2>
+    <p>LAD Digital is a <strong>100% digital store</strong>. We sell Shopify themes and digital resources that are delivered electronically. No physical items are manufactured, packaged, or shipped at any point in time.</p>
+    <p>This means:</p>
+    <ul>
+      <li>There are no shipping charges — ever</li>
+      <li>There are no delivery timelines dependent on location or courier services</li>
+      <li>Your product is available to download immediately after payment</li>
+      <li>Delivery works the same whether you are in India or anywhere else in the world</li>
+    </ul>
+
+    <h2>2. How Digital Delivery Works</h2>
+    <p>Once your payment is confirmed, here is exactly what happens:</p>
+
+    <div class="delivery-steps">
+      <div class="d-step">
+        <div class="d-step-num gold">1</div>
+        <div class="d-step-body">
+          <strong>Payment Confirmed</strong>
+          <p>Your payment is processed securely through our trusted payment partner. You receive an on-screen confirmation immediately.</p>
+        </div>
+      </div>
+      <div class="d-step">
+        <div class="d-step-num gold">2</div>
+        <div class="d-step-body">
+          <strong>Download Link Generated</strong>
+          <p>A secure, unique download link is automatically generated and sent to the email address you provided at checkout — typically within 1–2 minutes of payment.</p>
+        </div>
+      </div>
+      <div class="d-step">
+        <div class="d-step-num gold">3</div>
+        <div class="d-step-body">
+          <strong>Access Your Product</strong>
+          <p>Click the download link in your email to access all 130+ premium Shopify themes. The download works on any device — phone, tablet, or laptop.</p>
+        </div>
+      </div>
+      <div class="d-step">
+        <div class="d-step-num green">✓</div>
+        <div class="d-step-body">
+          <strong>Lifetime Access Secured</strong>
+          <p>Your purchase grants you permanent, lifetime access. Save the files securely — there are no expiry dates and no re-download limits enforced arbitrarily.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>3. Delivery Timeframe</h2>
+    <p>Digital delivery is <strong>instant to near-instant</strong> in all cases. The expected timeframe after confirmed payment is:</p>
+    <ul>
+      <li><strong>On-screen access:</strong> Immediately after payment confirmation</li>
+      <li><strong>Email with download link:</strong> Within 1–5 minutes</li>
+      <li><strong>Maximum wait in exceptional cases:</strong> Up to 30 minutes</li>
+    </ul>
+    <p>If you do not receive your download link within 30 minutes of payment, please check your spam or junk folder first, then contact us at <a href="mailto:laddigital@zohomail.in">laddigital@zohomail.in</a>.</p>
+
+    <h2>4. No Physical Shipping</h2>
+    <p>LAD Digital does <strong>not ship any physical goods</strong> under any circumstances. If you are looking for a physical product delivery, please note that our store does not offer one. All purchases are for digital downloads only.</p>
+    <p>Accordingly:</p>
+    <ul>
+      <li>No postal address is required from you</li>
+      <li>No tracking number or courier service is involved</li>
+      <li>No import duties, customs fees, or regional delivery charges apply</li>
+      <li>Delivery is identical for customers across India and internationally</li>
+    </ul>
+
+    <h2>5. Incorrect Email Address</h2>
+    <p>Your download link is sent to the email address provided at checkout. Please ensure you enter a correct, active email address when completing your purchase.</p>
+    <p>LAD Digital is <strong>not responsible for non-delivery of the download link</strong> caused by an incorrect email address entered by the customer. If this happens, contact us promptly with your payment reference and we will resolve it manually.</p>
+
+    <h2>6. Access Issues After Delivery</h2>
+    <p>If you experience any difficulties downloading or accessing your product after receiving the link:</p>
+    <ul>
+      <li>Try opening the link in a different browser</li>
+      <li>Ensure you have a stable internet connection</li>
+      <li>Check if the link has expired and contact us for a reissue</li>
+    </ul>
+
+    <div class="green-box">
+      <p>✅ <strong>We're here to help.</strong> If you face any issue with accessing your purchased product, reach out to us at <a href="mailto:laddigital@zohomail.in" style="color:var(--green2)">laddigital@zohomail.in</a> and our team will assist you promptly — usually within a few hours.</p>
+    </div>
+
+    <h2>7. International Customers</h2>
+    <p>Our digital products are available to customers <strong>worldwide</strong>. Since delivery is entirely digital, there are no geographic restrictions, no customs delays, and no additional charges for international customers. You receive the same instant access regardless of your location.</p>
+
+    <h2>8. Contact Us</h2>
+    <p>For any questions about delivery or accessing your product:<br>
+    📧 <a href="mailto:laddigital@zohomail.in">laddigital@zohomail.in</a>
+    ✆ <a href="+919475007716">+919475007716</a></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="Page_Logo.png" alt="LAD Digital" style="width:24px;height:24px;object-fit:contain;opacity:.7">
+    LAD<span style="color:var(--gold2)">Digital</span>
+  </div>
+  <p>
+    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="terms.html">Terms &amp; Conditions</a> &nbsp;·&nbsp;
+    <a href="shipping-delivery.html">Shipping &amp; Delivery</a> &nbsp;·&nbsp;
+    <a href="refund-policy.html">Refund Policy</a> &nbsp;·&nbsp;
+    <a href="disclaimer.html">Disclaimer</a> &nbsp;·&nbsp;
+    <a href="contact.html">Contact Us</a>
+  </p>
+  <p style="margin-top:8px">© 2026 LAD Digital. All rights reserved.</p>
+  <p style="margin-top:10px;max-width:820px;margin-left:auto;margin-right:auto">This site is not a part of the Facebook™ website or Facebook™ Inc. Additionally, this site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc.</p>
+</footer>
+
+</body>
+</html>
